@@ -22,4 +22,10 @@
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17"
     }
+	"repositories": {
+    "packagist": {
+        "type": "composer",
+        "url": "https://packagist.phpcomposer.com"
+    }
+}
 }
