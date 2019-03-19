@@ -15,23 +15,24 @@
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
     <!-- Css files -->
     <!-- Icons -->
-    <link href="css/icons.css" rel="stylesheet" />
+    <link href="/css/icons.css" rel="stylesheet" />
     <!-- Bootstrap stylesheets (included template modifications) -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/bootstrap.css" rel="stylesheet" />
     <!-- Plugins stylesheets (all plugin custom css) -->
-    <link href="css/plugins.css" rel="stylesheet" />
+    <link href="/css/plugins.css" rel="stylesheet" />
     <!-- Main stylesheets (template main css file) -->
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
     <!-- Custom stylesheets ( Put your own changes here ) -->
-    <link href="css/custom.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="icon" href="img/ico/favicon.ico" type="image/png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="icon" href="/img/ico/favicon.ico" type="image/png">
     <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
     <meta name="msapplication-TileColor" content="#3399cc" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body class="login-page">
 <!-- Start login container -->
@@ -40,11 +41,11 @@
         <!-- Start .panel -->
         <div class="panel-heading">
             <h4 class="panel-title text-center">
-                <img id="logo" src="img/logo-dark.png" alt="Dynamic logo">
+                <img id="logo" src="/img/logo-dark.png" alt="Dynamic logo">
             </h4>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal mt0" action="index.html" id="login-form" role="form">
+            <form class="form-horizontal mt0" action="/admin/login" id="login-form" type="post" role="form">
                 <div class="form-group">
                     <div class="col-lg-12">
                         <div class="input-group input-icon">
@@ -70,25 +71,25 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4 mb25">
-                        <button class="btn btn-default pull-right" type="submit">Login</button>
+                        <button class="btn btn-default pull-right" type="submit" id="login">Login</button>
                     </div>
                 </div>
             </form>
-            <div class="seperator">
-                <strong>or</strong>
-                <hr>
-            </div>
-            <div class="social-buttons text-center mt5 mb5">
-                <a href="#" class="btn btn-primary btn-alt mr10">Sign in with <i class="fa fa-facebook s20 ml5 mr0"></i></a>
-                <a href="#" class="btn btn-danger btn-alt ml10">Sign in with <i class="fa fa-google-plus s20 ml5 mr0"></i></a>
-            </div>
+            {{--<div class="seperator">--}}
+                {{--<strong>or</strong>--}}
+                {{--<hr>--}}
+            {{--</div>--}}
+            {{--<div class="social-buttons text-center mt5 mb5">--}}
+                {{--<a href="#" class="btn btn-primary btn-alt mr10">Sign in with <i class="fa fa-facebook s20 ml5 mr0"></i></a>--}}
+                {{--<a href="#" class="btn btn-danger btn-alt ml10">Sign in with <i class="fa fa-google-plus s20 ml5 mr0"></i></a>--}}
+            {{--</div>--}}
         </div>
-        <div class="panel-footer gray-lighter-bg bt">
-            <h4 class="text-center"><strong>Don`t have an account ?</strong>
-            </h4>
-            <p class="text-center"><a href="register.html" class="btn btn-primary">Create account</a>
-            </p>
-        </div>
+        {{--<div class="panel-footer gray-lighter-bg bt">--}}
+            {{--<h4 class="text-center"><strong>Don`t have an account ?</strong>--}}
+            {{--</h4>--}}
+            {{--<p class="text-center"><a href="register.html" class="btn btn-primary">Create account</a>--}}
+            {{--</p>--}}
+        {{--</div>--}}
     </div>
     <!-- End .panel -->
 </div>
@@ -109,18 +110,19 @@
     window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
 </script>
 <!--[if lt IE 9]>
-<script type="text/javascript" src="js/libs/excanvas.min.js"></script>
+<script type="text/javascript" src="/js/libs/excanvas.min.js"></script>
 <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<script type="text/javascript" src="js/libs/respond.min.js"></script>
+<script type="text/javascript" src="/js/libs/respond.min.js"></script>
 <![endif]-->
 <!-- Bootstrap plugins -->
-<script src="js/bootstrap/bootstrap.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
 <!-- Form plugins -->
-<script src="plugins/forms/validation/jquery.validate.js"></script>
-<script src="plugins/forms/validation/additional-methods.min.js"></script>
+<script src="/plugins/forms/validation/jquery.validate.js"></script>
+<script src="/plugins/forms/validation/additional-methods.min.js"></script>
 <!-- Init plugins olny for this page -->
-<script src="js/pages/login.js"></script>
+<script src="/js/pages/login.js"></script>
 <!-- Google Analytics:  -->
+<script src="/plugins/layer/layer.js"></script>
 <script>
     (function(i, s, o, g, r, a, m)
     {
@@ -137,6 +139,31 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-3560057-28', 'auto');
     ga('send', 'pageview');
+    $(function () {
+        //登录按钮点击事件
+        $(document).on('click','#login',function () {
+            let username = $('input[name="email"]').val();
+            let password = $('input[name="password"]').val();
+            let remember = $('input[name="remember"]')[0].checked;
+            $.ajax({
+                url:'/admin/login',
+                type:'post',
+                data:{
+                    username:username,
+                    password:password,
+                    '_token':'{{csrf_token()}}',
+                    remember:remember
+                }, beforeSend:function () {
+                    loading = layer.load(1, {shade: [0.1,'#fff']});
+                },success:function (res) {
+
+                },complete:function () {
+                    layer.close(loading);
+                }
+            });
+            return false;
+        });
+    });
 </script>
 </body>
 </html>

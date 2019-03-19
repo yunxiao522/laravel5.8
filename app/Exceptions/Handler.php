@@ -4,6 +4,9 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
+
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +49,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        //重写表单验证输出逻辑
+        if ($exception instanceof ValidationException) {
+            if($request->expectsJson()){
+               return new JsonResponse($exception->errors());
+            }
+        }
         return parent::render($request, $exception);
     }
 }

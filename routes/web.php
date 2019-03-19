@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/login',function (){
     return view('admin.login');
 });
+Route::post('/admin/login','Admin\LoginController@login');
+Route::any('/admin/logout','Admin\loginController@logout');
+
+Route::get('/admin/index','Admin\IndexController@index');
+
